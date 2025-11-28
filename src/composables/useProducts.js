@@ -3,10 +3,7 @@ import { ref } from 'vue'
 import axios from 'axios'
 const API = import.meta.env.VITE_API_URL;
 
-
-//const API = import.meta.env.VITE_API_URL || 'http://localhost:3000/api'
-
-export function useProducts() {
+port function useProducts() {
   const products = ref([])
   const categories = ref([])
   const loading = ref(false)
