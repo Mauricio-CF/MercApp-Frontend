@@ -13,8 +13,6 @@ const routes = [
   { path: '/product/:id', name: 'product-detail', component: ProductDetail, props: true },
   { path: '/product/:id/edit', name: 'product-edit', component: ProductForm, props: true },
   { path: '/cart', name: 'cart', component: CartView },
-  { path: '/about', name: 'about', component: AboutView },
-  { path: '/:pathMatch(.*)*', name: 'notfound', component: NotFound }
 ]
 
 const router = createRouter({
