@@ -1,0 +1,128 @@
+:root {
+  --bg: #0b0b0b;
+  --panel: #121212;
+  --muted: #9aa0a6;
+  --accent: #00d1b2; 
+  --text: #e6eef1;
+}
+
+* { box-sizing: border-box; }
+body, html, #app {
+  height: 100%;
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.container { max-width: 1100px; margin: 0 auto; padding: 1rem; }
+.card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.08));
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.6);
+}
+
+
+.btn {
+  background: var(--accent);
+  color: #07110f;
+  border: none;
+  padding: .5rem .9rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.btn.secondary { background: transparent; color: var(--text); border: 1px solid rgba(255,255,255,0.06); }
+
+
+.header {
+  display:flex; justify-content:space-between; align-items:center; padding: 1rem 0;
+}
+.search { background: rgba(255,255,255,0.03); border: none; padding: .5rem; color:var(--text); border-radius: 8px; width: 250px; }
+
+
+.grid { display:grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1rem; margin-top: 1rem; }
+
+@media (max-width: 600px) {
+  .search { width: 140px; }
+}
+
+.product-image-container {
+  width: 100%;
+  height: 180px; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f4f4f4;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.product-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+
+form {
+  display: flex;
+  max-width: 420px;
+  margin: 2rem auto;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: -0.3rem;
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 0.65rem 0.75rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.06);
+  color: var(--text);
+  font-size: 0.95rem;
+  outline: none;
+  transition: 0.25s border, 0.25s background;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--accent);
+  background: rgba(255,255,255,0.12);
+}
+
+select {
+  appearance: none;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml;charset=UTF-8,<svg width='14' height='14' xmlns='http://www.w3.org/2000/svg' fill='%23ffffff'><path d='M4 5l3 3 3-3'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 14px;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+
+button.btn[type="submit"] {
+  margin-top: 0.5rem;
+  font-weight: 600;
+}
+
+button.btn[type="submit"]:hover {
+  filter: brightness(1.1);
+}
