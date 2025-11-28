@@ -1,9 +1,9 @@
-
 import { ref } from 'vue'
 import axios from 'axios'
-const API = import.meta.env.VITE_API_URL;
 
-port function useProducts() {
+const API = import.meta.env.VITE_API_URL
+
+export function useProducts() {
   const products = ref([])
   const categories = ref([])
   const loading = ref(false)
@@ -34,14 +34,26 @@ port function useProducts() {
     const res = await axios.post(`${API}/products`, product)
     return res.data
   }
+
   async function update(id, payload) {
     const res = await axios.put(`${API}/products/${id}`, payload)
     return res.data
   }
+
   async function remove(id) {
     await axios.delete(`${API}/products/${id}`)
     return true
   }
 
-  return { products, categories, loading, error, fetchAll, getById, create, update, remove }
+  return { 
+    products, 
+    categories, 
+    loading, 
+    error, 
+    fetchAll, 
+    getById, 
+    create, 
+    update, 
+    remove 
+  }
 }
