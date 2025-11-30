@@ -8,7 +8,7 @@
       <strong>${{ Number(product.price).toFixed(2) }}</strong>
       <div>
         <button class="btn" @click="$emit('add', product)">Añadir</button>
-        <router-link :to="`/product/${product.id}`" class="btn secondary">Ver</router-link>
+        <router-link :to="`/product/${product._id}`" class="btn secondary">Ver</router-link>
       </div>
     </div>
   </div>

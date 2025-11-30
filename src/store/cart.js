@@ -8,20 +8,20 @@ export const useCartStore = defineStore('cart', () => {
   function save() { localStorage.setItem('mercapp_cart', JSON.stringify(items.value)) }
 
   function add(product, qty = 1) {
-    const idx = items.value.findIndex(i => i.id === product.id)
+    const idx = items.value.findIndex(i => i._id === product._id)
     if (idx === -1) items.value.push({ ...product, qty })
     else items.value[idx].qty += qty
     save()
   }
   function remove(productId) {
-  const idx = items.value.findIndex(i => i.id === productId);
+  const idx = items.value.findIndex(i => i._id === productId);
   if (idx !== -1) {
     items.value.splice(idx, 1); // Reactividad inmediata
     save();
   }
 }
   function setQty(productId, qty) {
-    const idx = items.value.findIndex(i => i.id === productId)
+    const idx = items.value.findIndex(i => i._id === productId)
     if (idx !== -1) items.value[idx].qty = qty
     save()
   }

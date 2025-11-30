@@ -11,7 +11,7 @@
       <p><strong>Stock:</strong> {{ product.stock }}</p>
 
       <div class="buttons">
-        <router-link :to="`/product/${product.id}/edit`" class="btn secondary">Editar</router-link>
+        <router-link :to="`/product/${product._id}/edit`" class="btn secondary">Editar</router-link>
         <button @click="addToCart" class="btn">Agregar al carrito</button>
       </div>
     </div>
@@ -44,7 +44,7 @@ export default {
     
 
     // buscar nombre de categoría
-      const cat = categories.value.find(c => c.id == product.value.categoryId);
+      const cat = categories.value.find(c => c._id == product.value.categoryId);
       categoryName.value = cat ? cat.name : "Sin categoría";
     });
 
