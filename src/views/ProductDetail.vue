@@ -44,7 +44,7 @@ export default {
     
 
     // buscar nombre de categoría
-      const cat = categories.value.find(c => c._id == product.value.category);
+      const cat = categories.value.find(c => c._id == product.value.categoryID);
       categoryName.value = cat ? cat.name : "Sin categoría";
     });
 
