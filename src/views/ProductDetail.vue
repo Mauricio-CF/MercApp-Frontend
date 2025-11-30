@@ -70,3 +70,9 @@ export default {
   },
 };
 </script>
+<style>
+.big-img {
+  width: 100%;
+  border-radius: 8px;
+}
+</style>
